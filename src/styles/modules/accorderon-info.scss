@@ -1,0 +1,52 @@
+@import '../utils/main.utils.scss';
+.accordion-section {
+    margin-top: 100px;
+    .container {
+        .accordion {
+            .accordion-item {
+                .accordion-header {
+                    padding: 20px;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    background-color: $COLOR__BLACK;
+                    @include flex(row, space-between, center);
+                    .accordion-header-text {
+                        @include flex(row, null, center);
+                        .accordion-header-text-left {
+                            @include flex(row, null, center);
+                            span {
+                                margin-left: 8px;
+                                @include font(16px, 700, 20px, $COLOR__YELLOW);
+                            }
+                        }
+                        .accordion-header-text-right {
+                            margin-left: 48px;
+                            p {
+                                @include font(14px, 500, 18px, $COLOR__YELLOW);
+                            }
+                        }
+                    }
+                    .accordion-header-arrow {
+                        @include flex(row, center, center);
+                        svg {
+                            transition: .3s;
+                        }
+                    }
+                }
+                .accordion-header.active {
+                    .accordion-header-arrow {
+                        svg {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+                .accordion-content {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s;
+                }
+            }
+        }
+    }
+}

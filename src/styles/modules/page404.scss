@@ -1,0 +1,26 @@
+@import '../utils/main.utils.scss';
+#page-err {
+    width: 100%;
+    height: 100vh;
+    @include flex(row, center, center);
+    .container {
+        .h1 {
+            text-align: center;
+            animation: tracking-in-expand 0.5s 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            @include font(40px, 600, 45px, $COLOR__BLACK);
+        }
+    }
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}

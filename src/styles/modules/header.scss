@@ -1,0 +1,49 @@
+@import '../utils/main.utils.scss';
+.header {
+    padding: 48px 120px;
+    border-bottom: 1px solid $COLOR__BLACK;
+    .container {
+        @include flex(row, space-between, flex-start);
+    }
+}
+
+.nav {
+    .nav-list {
+        @include flex(row, null, center);
+        .nav-item {
+            a {
+                position: relative;
+                @include font(20px, 600, 26px, $COLOR__BLACK);
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 50%;
+                    transform: translateX(-50%) scale(0);
+                    width: 100%;
+                    height: 1px;
+                    background-color: $COLOR__BLACK;
+                    transition: .3s;
+                }
+                &:hover {
+                    &::before {
+                        transform: translateX(-50%) scale(1);
+                    }
+                }
+            }
+            #sign-up {
+                padding: 12px;
+                margin-left: 48px;
+                border-radius: 4px;
+                background-color: $COLOR__BLACK;
+                border: 1px solid $COLOR__BLACK;
+                transition: .3s;
+                @include font(20px, 600, 26px, $COLOR__WHITE);
+                &:hover {
+                    background-color: transparent;
+                    color: $COLOR__BLACK;
+                }
+            }
+        }
+    }
+}

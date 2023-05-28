@@ -1,0 +1,29 @@
+@import '../utils/main.utils.scss';
+.footer {
+    padding: 85px;
+    border-top: 1px solid $COLOR__BLACK;
+    background-color: $COLOR__WHITE;
+}
+
+.footer-list {
+    @include flex(row, space-between, null);
+}
+
+.footer-logo {
+    @include flex(row, center, center);
+}
+
+.footer-nav-list {
+    .footer-nav-item {
+        margin-bottom: 19px;
+        a {
+            font-family: 'Space Mono';
+            text-transform: uppercase;
+            transition: .3s;
+            @include font(14px, 700, 21px, $COLOR__BLACK);
+            &:hover {
+                color: $COLOR__ORANGE;
+            }
+        }
+    }
+}

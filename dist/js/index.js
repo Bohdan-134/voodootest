@@ -1,1 +1,5 @@
 
+const signInBtn=document.getElementById('sign-up');function createModal(){const modalWrapper=document.createElement('div');modalWrapper.id='modalWrapper';const modalContent=document.createElement('div');modalContent.id='modalContent';const heading=document.createElement('h1');heading.innerText='Oops! Something went wrong';modalContent.appendChild(heading);const closeButton=document.createElement('button');closeButton.innerText='Closed';closeButton.addEventListener('click',closeModal);modalContent.appendChild(closeButton);modalWrapper.appendChild(modalContent);document.body.appendChild(modalWrapper);}
+function openModal(){const modalWrapper=document.getElementById('modalWrapper');modalWrapper.style.display='flex';setTimeout(function(){modalWrapper.style.opacity='1';},10);}
+function closeModal(){const modalWrapper=document.getElementById('modalWrapper');modalWrapper.style.opacity='0';setTimeout(function(){modalWrapper.style.display='none';modalWrapper.remove();},300);}
+window.onclick=function(event){const modalWrapper=document.getElementById('modalWrapper');if(event.target==modalWrapper){closeModal();}};signInBtn.onclick=function(){createModal();};
